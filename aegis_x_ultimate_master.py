@@ -27,6 +27,13 @@ from core.zero_day_discovery_engine import ZeroDayDiscoveryEngine
 from core.professional_vulnerability_arsenal import ProfessionalVulnerabilityArsenal
 from core.adaptive_triple_hunt_system import AdaptiveTripleHuntSystem
 from core.advanced_reconnaissance_engine import AdvancedReconnaissanceEngine
+from enhanced_vulnerability_scanner import EnhancedVulnerabilityScanner
+from advanced_pentest_arsenal import AdvancedPentestArsenal
+
+# Import advanced security tools integrations
+from core.advanced_nuclei_integration import AdvancedNucleiIntegration
+from core.advanced_sqlmap_integration import AdvancedSQLMapIntegration
+from core.advanced_redteam_toolkit import AdvancedRedTeamToolkit
 
 # Configure logging
 logging.basicConfig(
@@ -68,6 +75,15 @@ class AegisXUltimateMaster:
         # Threat Intelligence Engine
         self.threat_intelligence = ThreatIntelligenceEngine()
         
+        # Advanced Security Tools Integration
+        self.nuclei_integration = AdvancedNucleiIntegration()
+        self.sqlmap_integration = AdvancedSQLMapIntegration()
+        self.redteam_toolkit = AdvancedRedTeamToolkit()
+        
+        # Enhanced Tools
+        self.enhanced_scanner = None
+        self.pentest_arsenal = None
+        
         # Elite Engines
         self.vulnerability_engine = None
         self.verification_engine = None
@@ -96,6 +112,9 @@ class AegisXUltimateMaster:
             'payload_stats': {},
             'success_metrics': {}
         }
+        
+        # Initialize discovered endpoints
+        self.discovered_endpoints = []
         
         # Smart prioritization and chaining
         self.vulnerability_chains = []
@@ -129,6 +148,10 @@ class AegisXUltimateMaster:
             # Initialize advanced systems
             self.triple_hunt_system = AdaptiveTripleHuntSystem()
             self.advanced_recon = AdvancedReconnaissanceEngine()
+            
+            # Initialize enhanced tools
+            self.enhanced_scanner = EnhancedVulnerabilityScanner()
+            self.pentest_arsenal = AdvancedPentestArsenal()
             
             logger.info("⚡ All engines initialized successfully")
             
@@ -195,45 +218,49 @@ class AegisXUltimateMaster:
             logger.info("🧠 PHASE 2: SMART TARGET ANALYSIS & INTELLIGENCE GATHERING")
             await self.smart_target_analysis(target)
             
-            # Phase 3: Adaptive Triple Hunt System
-            logger.info("🚀 PHASE 3: ADAPTIVE TRIPLE HUNT SYSTEM")
+            # Phase 3: Advanced Security Tools Integration
+            logger.info("⚡ PHASE 3: ADVANCED SECURITY TOOLS INTEGRATION")
+            await self._execute_advanced_tools_scan(target)
+            
+            # Phase 4: Adaptive Triple Hunt System
+            logger.info("🚀 PHASE 4: ADAPTIVE TRIPLE HUNT SYSTEM")
             triple_hunt_results = await self._execute_triple_hunt_system(target)
             
-            # Phase 4: Vulnerability Chain Planning
-            logger.info("🔗 PHASE 4: VULNERABILITY CHAIN PLANNING")
+            # Phase 5: Vulnerability Chain Planning
+            logger.info("🔗 PHASE 5: VULNERABILITY CHAIN PLANNING")
             await self.build_vulnerability_chains()
             
-            # Phase 5: AI-Powered Reconnaissance & Training
+            # Phase 6: AI-Powered Reconnaissance & Training
             if ai_training:
-                logger.info("🤖 PHASE 5: AI AGENT TRAINING & RECONNAISSANCE")
+                logger.info("🤖 PHASE 6: AI AGENT TRAINING & RECONNAISSANCE")
                 await self._ai_powered_reconnaissance(target)
             
-            # Phase 6: Smart Vulnerability Chain Execution
-            logger.info("⚡ PHASE 6: SMART VULNERABILITY CHAIN EXECUTION")
+            # Phase 7: Smart Vulnerability Chain Execution
+            logger.info("⚡ PHASE 7: SMART VULNERABILITY CHAIN EXECUTION")
             await self._execute_smart_vulnerability_chains(target, time_limit)
             
-            # Phase 7: Zero-Day Discovery
-            logger.info("🔬 PHASE 7: ZERO-DAY DISCOVERY")
+            # Phase 8: Zero-Day Discovery
+            logger.info("🔬 PHASE 8: ZERO-DAY DISCOVERY")
             await self._zero_day_discovery(target)
             
-            # Phase 8: Ultimate Vulnerability Discovery (Fallback)
-            logger.info("💀 PHASE 8: ULTIMATE VULNERABILITY DISCOVERY (FALLBACK)")
+            # Phase 9: Ultimate Vulnerability Discovery (Fallback)
+            logger.info("💀 PHASE 9: ULTIMATE VULNERABILITY DISCOVERY (FALLBACK)")
             await self._ultimate_vulnerability_discovery(target, time_limit)
             
-            # Phase 9: Advanced Verification
-            logger.info("🔍 PHASE 9: ADVANCED VERIFICATION")
+            # Phase 10: Advanced Verification
+            logger.info("🔍 PHASE 10: ADVANCED VERIFICATION")
             await self._advanced_verification()
             
-            # Phase 10: Stealth Analysis
-            logger.info("🥷 PHASE 10: STEALTH ANALYSIS")
+            # Phase 11: Stealth Analysis
+            logger.info("🥷 PHASE 11: STEALTH ANALYSIS")
             await self._stealth_analysis()
             
-            # Phase 11: Success Validation
-            logger.info("✅ PHASE 11: SUCCESS VALIDATION")
+            # Phase 12: Success Validation
+            logger.info("✅ PHASE 12: SUCCESS VALIDATION")
             success_results = await self._validate_success_criteria()
             
-            # Phase 12: Ultimate Reporting
-            logger.info("📋 PHASE 12: ULTIMATE REPORTING")
+            # Phase 13: Ultimate Reporting
+            logger.info("📋 PHASE 13: ULTIMATE REPORTING")
             await self._generate_ultimate_report()
             
             self.campaign_results['end_time'] = datetime.now().isoformat()
@@ -1253,6 +1280,276 @@ Duration: {self._calculate_duration():.1f} minutes
             chain_results['execution_time'] = time.time() - start_time
         
         return chain_results
+    
+    async def _execute_advanced_tools_scan(self, target: str) -> Dict[str, Any]:
+        """Execute advanced security tools integration scan"""
+        logger.info("⚡ Starting Advanced Security Tools Integration...")
+        
+        advanced_results = {
+            'nuclei_results': [],
+            'sqlmap_results': [],
+            'redteam_results': [],
+            'enhanced_scanner_results': [],
+            'pentest_arsenal_results': [],
+            'total_findings': 0,
+            'high_confidence_findings': 0
+        }
+        
+        try:
+            # Phase 3.1: Nuclei Comprehensive Scan
+            logger.info("🔍 Phase 3.1: Nuclei Comprehensive Vulnerability Scan")
+            nuclei_results = await self.nuclei_integration.scan_target(target, 'comprehensive')
+            advanced_results['nuclei_results'] = nuclei_results
+            
+            # Process Nuclei results
+            for result in nuclei_results:
+                vuln_data = {
+                    'id': f"nuclei_{len(self.campaign_results['discovered_vulnerabilities'])}",
+                    'type': result.template_name,
+                    'severity': result.severity,
+                    'url': result.url,
+                    'description': result.description,
+                    'evidence': {
+                        'template_id': result.template_id,
+                        'matched_at': result.matched_at,
+                        'curl_command': result.curl_command,
+                        'extracted_results': result.extracted_results
+                    },
+                    'source': 'nuclei',
+                    'confidence': 90,  # Nuclei has high confidence
+                    'timestamp': datetime.now().isoformat()
+                }
+                self.campaign_results['discovered_vulnerabilities'].append(vuln_data)
+                advanced_results['total_findings'] += 1
+                
+                if result.severity in ['critical', 'high']:
+                    advanced_results['high_confidence_findings'] += 1
+            
+            logger.info(f"✅ Nuclei scan completed: {len(nuclei_results)} vulnerabilities found")
+            
+            # Phase 3.2: SQLMap Advanced SQL Injection Testing
+            logger.info("💉 Phase 3.2: SQLMap Advanced SQL Injection Testing")
+            sqlmap_results = await self.sqlmap_integration.scan_url(target, 'comprehensive')
+            advanced_results['sqlmap_results'] = sqlmap_results
+            
+            # Process SQLMap results
+            for result in sqlmap_results:
+                vuln_data = {
+                    'id': f"sqlmap_{len(self.campaign_results['discovered_vulnerabilities'])}",
+                    'type': f"SQL Injection ({result.injection_type})",
+                    'severity': result.risk_level,
+                    'url': result.url,
+                    'description': f"SQL injection vulnerability in parameter '{result.parameter}' using {result.technique}",
+                    'evidence': {
+                        'parameter': result.parameter,
+                        'payload': result.payload,
+                        'technique': result.technique,
+                        'dbms': result.dbms,
+                        'os': result.os,
+                        'vulnerability_details': result.vulnerability_details
+                    },
+                    'source': 'sqlmap',
+                    'confidence': result.confidence,
+                    'timestamp': datetime.now().isoformat()
+                }
+                self.campaign_results['discovered_vulnerabilities'].append(vuln_data)
+                advanced_results['total_findings'] += 1
+                
+                if result.risk_level in ['critical', 'high']:
+                    advanced_results['high_confidence_findings'] += 1
+            
+            logger.info(f"✅ SQLMap scan completed: {len(sqlmap_results)} SQL injection vulnerabilities found")
+            
+            # Phase 3.3: Red Team Comprehensive Assessment
+            logger.info("🔴 Phase 3.3: Red Team Comprehensive Assessment")
+            redteam_results = await self.redteam_toolkit.comprehensive_red_team_assessment(target)
+            advanced_results['redteam_results'] = redteam_results
+            
+            # Process Red Team results
+            for result in redteam_results:
+                if result.success:  # Only include successful findings
+                    vuln_data = {
+                        'id': f"redteam_{len(self.campaign_results['discovered_vulnerabilities'])}",
+                        'type': result.technique,
+                        'severity': result.severity,
+                        'url': result.target,
+                        'description': result.description,
+                        'evidence': result.evidence,
+                        'source': 'redteam',
+                        'confidence': 85,  # Red team techniques have high confidence
+                        'remediation': result.remediation,
+                        'references': result.references,
+                        'timestamp': datetime.now().isoformat()
+                    }
+                    self.campaign_results['discovered_vulnerabilities'].append(vuln_data)
+                    advanced_results['total_findings'] += 1
+                    
+                    if result.severity in ['critical', 'high']:
+                        advanced_results['high_confidence_findings'] += 1
+            
+            logger.info(f"✅ Red Team assessment completed: {len([r for r in redteam_results if r.success])} vulnerabilities found")
+            
+            # Phase 3.4: Enhanced Vulnerability Scanner
+            logger.info("🎯 Phase 3.4: Enhanced Vulnerability Scanner")
+            async with self.enhanced_scanner as scanner:
+                enhanced_results = await scanner.scan_target(target)
+                advanced_results['enhanced_scanner_results'] = enhanced_results
+                
+                # Process enhanced scanner results
+                for result in enhanced_results:
+                    vuln_data = {
+                        'id': f"enhanced_{len(self.campaign_results['discovered_vulnerabilities'])}",
+                        'type': result['type'],
+                        'severity': result['severity'],
+                        'url': result['url'],
+                        'description': f"Enhanced scanner detection: {result['evidence']}",
+                        'evidence': {
+                            'payload': result['payload'],
+                            'evidence': result['evidence'],
+                            'confidence': result['confidence']
+                        },
+                        'source': 'enhanced_scanner',
+                        'confidence': int(result['confidence'] * 100),
+                        'timestamp': datetime.now().isoformat()
+                    }
+                    self.campaign_results['discovered_vulnerabilities'].append(vuln_data)
+                    advanced_results['total_findings'] += 1
+                    
+                    if result['severity'].lower() in ['critical', 'high']:
+                        advanced_results['high_confidence_findings'] += 1
+            
+            logger.info(f"✅ Enhanced scanner completed: {len(enhanced_results)} vulnerabilities found")
+            
+            # Phase 3.5: Advanced Penetration Testing Arsenal
+            logger.info("🏆 Phase 3.5: Advanced Penetration Testing Arsenal")
+            pentest_report = await self.pentest_arsenal.generate_comprehensive_report(target)
+            advanced_results['pentest_arsenal_results'] = pentest_report
+            
+            # Process pentest arsenal results
+            all_pentest_vulns = (pentest_report['results']['nuclei_scan']['findings'] + 
+                               pentest_report['results']['sqlmap_scan']['findings'] + 
+                               pentest_report['results']['bug_bounty_hunt']['findings'])
+            
+            for result in all_pentest_vulns:
+                vuln_data = {
+                    'id': f"pentest_{len(self.campaign_results['discovered_vulnerabilities'])}",
+                    'type': result.get('name', result.get('type', 'Unknown')),
+                    'severity': result.get('severity', 'Medium'),
+                    'url': result.get('url', target),
+                    'description': f"Pentest arsenal detection: {result.get('evidence', 'N/A')}",
+                    'evidence': {
+                        'payload': result.get('payload', 'N/A'),
+                        'evidence': result.get('evidence', 'N/A'),
+                        'confidence': result.get('confidence', 0.5)
+                    },
+                    'source': 'pentest_arsenal',
+                    'confidence': int(result.get('confidence', 0.5) * 100),
+                    'timestamp': datetime.now().isoformat()
+                }
+                self.campaign_results['discovered_vulnerabilities'].append(vuln_data)
+                advanced_results['total_findings'] += 1
+                
+                if result.get('severity', '').lower() in ['critical', 'high']:
+                    advanced_results['high_confidence_findings'] += 1
+            
+            logger.info(f"✅ Pentest arsenal completed: {len(all_pentest_vulns)} vulnerabilities found")
+            
+            # Phase 3.6: Cross-Tool Correlation and Deduplication
+            logger.info("🔗 Phase 3.4: Cross-Tool Correlation and Deduplication")
+            await self._correlate_and_deduplicate_findings()
+            
+            # Phase 3.5: Advanced Exploitation Attempts
+            logger.info("💥 Phase 3.5: Advanced Exploitation Attempts")
+            await self._attempt_advanced_exploitation(sqlmap_results)
+            
+            # Summary
+            total_advanced_findings = advanced_results['total_findings']
+            high_confidence = advanced_results['high_confidence_findings']
+            
+            logger.info("⚡ Advanced Security Tools Integration Summary:")
+            logger.info(f"   🔍 Nuclei findings: {len(nuclei_results)}")
+            logger.info(f"   💉 SQLMap findings: {len(sqlmap_results)}")
+            logger.info(f"   🔴 Red Team findings: {len([r for r in redteam_results if r.success])}")
+            logger.info(f"   🎯 Enhanced Scanner findings: {len(advanced_results['enhanced_scanner_results'])}")
+            logger.info(f"   🏆 Pentest Arsenal findings: {len(all_pentest_vulns)}")
+            logger.info(f"   📊 Total findings: {total_advanced_findings}")
+            logger.info(f"   🎯 High confidence: {high_confidence}")
+            logger.info(f"   📈 Success rate: {(high_confidence/max(total_advanced_findings,1)*100):.1f}%")
+            
+        except Exception as e:
+            logger.error(f"Error in advanced tools scan: {e}")
+            import traceback
+            logger.error(traceback.format_exc())
+        
+        return advanced_results
+    
+    async def _correlate_and_deduplicate_findings(self):
+        """Correlate and deduplicate findings from different tools"""
+        logger.info("🔗 Correlating findings from multiple tools...")
+        
+        # Simple deduplication based on URL and vulnerability type
+        seen_vulns = set()
+        deduplicated_vulns = []
+        
+        for vuln in self.campaign_results['discovered_vulnerabilities']:
+            # Create a signature for the vulnerability
+            signature = f"{vuln['url']}_{vuln['type'].lower().replace(' ', '_')}"
+            
+            if signature not in seen_vulns:
+                seen_vulns.add(signature)
+                deduplicated_vulns.append(vuln)
+            else:
+                # Merge evidence from duplicate findings
+                for existing_vuln in deduplicated_vulns:
+                    if f"{existing_vuln['url']}_{existing_vuln['type'].lower().replace(' ', '_')}" == signature:
+                        # Merge evidence
+                        if 'merged_sources' not in existing_vuln:
+                            existing_vuln['merged_sources'] = [existing_vuln['source']]
+                        existing_vuln['merged_sources'].append(vuln['source'])
+                        
+                        # Update confidence based on multiple confirmations
+                        existing_vuln['confidence'] = min(95, existing_vuln['confidence'] + 5)
+                        break
+        
+        # Update the campaign results with deduplicated findings
+        original_count = len(self.campaign_results['discovered_vulnerabilities'])
+        self.campaign_results['discovered_vulnerabilities'] = deduplicated_vulns
+        deduplicated_count = len(deduplicated_vulns)
+        
+        logger.info(f"✅ Deduplication completed: {original_count} → {deduplicated_count} findings")
+    
+    async def _attempt_advanced_exploitation(self, sqlmap_results):
+        """Attempt advanced exploitation of confirmed vulnerabilities"""
+        logger.info("💥 Attempting advanced exploitation...")
+        
+        exploitation_results = []
+        
+        # Attempt SQLMap exploitation for confirmed SQL injection vulnerabilities
+        for result in sqlmap_results:
+            if result.confidence > 80:  # Only exploit high-confidence findings
+                try:
+                    logger.info(f"🎯 Attempting exploitation of SQL injection in {result.parameter}")
+                    exploit_data = await self.sqlmap_integration.exploit_vulnerability(result)
+                    
+                    if exploit_data['status'] == 'success':
+                        exploitation_results.append({
+                            'vulnerability_id': result.url,
+                            'exploitation_method': 'sqlmap',
+                            'extracted_data': exploit_data.get('extracted_data', {}),
+                            'success': True
+                        })
+                        logger.info(f"✅ Successfully exploited SQL injection in {result.parameter}")
+                    
+                except Exception as e:
+                    logger.debug(f"Exploitation attempt failed: {e}")
+        
+        # Store exploitation results
+        self.campaign_results['exploitation_results'] = exploitation_results
+        
+        if exploitation_results:
+            logger.info(f"💥 Advanced exploitation completed: {len(exploitation_results)} successful exploits")
+        else:
+            logger.info("💥 Advanced exploitation completed: No successful exploits")
 
 async def main():
     """Main entry point"""
