@@ -133,6 +133,31 @@ class RealTargetHunter:
             ],
             "intigriti": [
                 {
+                    "name": "Allegro",
+                    "url": "https://allegro.pl.allegrosandbox.pl",
+                    "scope": [
+                        "*.allegro.pl.allegrosandbox.pl",
+                        "*.allegro.cz.allegrosandbox.pl", 
+                        "*.allegro.sk.allegrosandbox.pl"
+                    ],
+                    "out_of_scope": [
+                        "*.allegro.pl",
+                        "*.allegro.sk", 
+                        "*.allegro.cz",
+                        "*.allegrogroup.com"
+                    ],
+                    "reward_range": "€100-€3500",
+                    "program_type": "public",
+                    "active": True,
+                    "tier": "Tier 2",
+                    "rules": {
+                        "max_requests_per_sec": 5,
+                        "user_agent_required": "@intigriti.me",
+                        "automated_tooling_allowed": True,
+                        "sandbox_only": True
+                    }
+                },
+                {
                     "name": "European Commission",
                     "url": "https://ec.europa.eu",
                     "scope": ["ec.europa.eu", "*.ec.europa.eu"],
@@ -185,7 +210,7 @@ class RealTargetHunter:
         self.session = aiohttp.ClientSession(
             timeout=aiohttp.ClientTimeout(total=30),
             headers={
-                'User-Agent': 'AEGIS-X Security Research Tool v2.0',
+                'User-Agent': 'AEGIS-X Security Research Tool v2.0 - researcher@intigriti.me',
                 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
                 'Accept-Language': 'en-US,en;q=0.5',
                 'Accept-Encoding': 'gzip, deflate',
