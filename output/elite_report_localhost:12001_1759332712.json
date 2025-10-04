@@ -1,0 +1,71 @@
+{
+  "campaign_info": {
+    "campaign_id": "elite_campaign_1759332692",
+    "version": "6.0 Elite Professional",
+    "target": "localhost:12001",
+    "start_time": "2025-10-01T15:31:32.386165",
+    "end_time": "2025-10-01T15:31:52.338055",
+    "duration_seconds": 19.951884031295776,
+    "duration_minutes": 0.3325314005215963
+  },
+  "reconnaissance": {
+    "subdomains_found": 0,
+    "endpoints_found": 3,
+    "parameters_found": 53,
+    "technologies_identified": 0,
+    "api_endpoints_found": 0,
+    "forms_found": 6,
+    "interesting_files_found": 0
+  },
+  "vulnerability_summary": {
+    "total_discovered": 17,
+    "total_verified": 0,
+    "verification_rate": 0.0,
+    "severity_breakdown": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0
+    },
+    "average_confidence": 0,
+    "average_exploitability": 0
+  },
+  "success_validation": {
+    "success": false,
+    "success_rate": 0.0,
+    "passed_checks": 0,
+    "total_checks": 7,
+    "individual_checks": {
+      "min_critical_vulns": false,
+      "min_high_vulns": false,
+      "min_medium_vulns": false,
+      "min_total_vulns": false,
+      "min_verified_rate": false,
+      "min_confidence_score": false,
+      "min_exploitability_score": false
+    },
+    "stats": {
+      "total_discovered": 17,
+      "total_verified": 0,
+      "verification_rate": 0.0,
+      "severity_counts": {
+        "CRITICAL": 0,
+        "HIGH": 0,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "average_confidence": 0,
+      "average_exploitability": 0,
+      "critical_count": 0,
+      "high_count": 0,
+      "medium_count": 0,
+      "low_count": 0
+    }
+  },
+  "vulnerabilities": [],
+  "statistics": {
+    "vulnerabilities_per_minute": 0.0,
+    "discovery_rate": 51.12299161322641,
+    "verification_efficiency": 0.0
+  }
+}
