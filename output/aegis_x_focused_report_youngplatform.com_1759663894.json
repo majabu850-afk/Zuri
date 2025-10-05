@@ -1,0 +1,23 @@
+{
+  "scan_info": {
+    "target": "youngplatform.com",
+    "timestamp": "2025-10-05T11:31:34.824750",
+    "scanner": "AEGIS-X Focused",
+    "version": "1.0"
+  },
+  "statistics": {
+    "total_vulnerabilities": 0,
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "verified": 0,
+    "verification_rate": 0
+  },
+  "target_info": {
+    "status_code": 200,
+    "server": "cloudflare",
+    "powered_by": "Unknown"
+  },
+  "vulnerabilities": []
+}

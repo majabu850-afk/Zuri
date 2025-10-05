@@ -1,0 +1,54 @@
+2025-10-05 11:31:24,339 - INFO - 🔥 Initializing AEGIS-X Focused Scanner
+2025-10-05 11:31:24,339 - INFO - ✅ Scanner initialized
+2025-10-05 11:31:24,339 - INFO - 🎯 Starting focused scan for: youngplatform.com
+2025-10-05 11:31:24,514 - INFO - 📊 Target: 200 cloudflare
+2025-10-05 11:31:24,514 - INFO - ⚡ Testing main target
+2025-10-05 11:31:31,145 - INFO - 📁 Testing common endpoints
+2025-10-05 11:31:34,823 - INFO - 🚀 Running focused Nuclei scan
+2025-10-05 11:31:34,824 - ERROR - ❌ Nuclei scan failed: [Errno 2] No such file or directory: 'nuclei'
+2025-10-05 11:31:34,824 - INFO - 🎉 Scan complete! Found 0 vulnerabilities
+2025-10-05 11:31:34,824 - INFO - ============================================================
+2025-10-05 11:31:34,824 - INFO - 🎯 AEGIS-X FOCUSED SCAN RESULTS
+2025-10-05 11:31:34,825 - INFO - ============================================================
+2025-10-05 11:31:34,825 - INFO - Target: youngplatform.com
+2025-10-05 11:31:34,825 - INFO - Total Vulnerabilities: 0
+2025-10-05 11:31:34,825 - INFO - Critical: 0
+2025-10-05 11:31:34,825 - INFO - High: 0
+2025-10-05 11:31:34,825 - INFO - Medium: 0
+2025-10-05 11:31:34,825 - INFO - Low: 0
+2025-10-05 11:31:34,825 - INFO - Verified: 0 (0%)
+2025-10-05 11:31:34,825 - INFO - Report saved: output/aegis_x_focused_report_youngplatform.com_1759663894.json
+2025-10-05 11:31:34,825 - INFO - ============================================================
+2025-10-05 11:31:34,825 - INFO - 🎯 Checking Success Criteria:
+2025-10-05 11:31:34,825 - INFO - ✅ Total Vulnerabilities: 0
+2025-10-05 11:31:34,825 - INFO - ✅ Critical: 0
+2025-10-05 11:31:34,825 - INFO - ✅ High: 0
+2025-10-05 11:31:34,825 - INFO - ✅ Medium: 0
+2025-10-05 11:31:34,825 - INFO - ⚠️ No vulnerabilities found - target may be well secured
+2025-10-05 11:31:40,083 - INFO - 🔥 Initializing AEGIS-X Focused Scanner
+2025-10-05 11:31:40,083 - INFO - ✅ Scanner initialized
+2025-10-05 11:31:40,083 - INFO - 🎯 Starting focused scan for: httpbin.org
+2025-10-05 11:31:40,315 - INFO - 📊 Target: 200 gunicorn/19.9.0
+2025-10-05 11:31:40,315 - INFO - ⚡ Testing main target
+2025-10-05 11:32:15,180 - INFO - 📁 Testing common endpoints
+2025-10-05 11:32:22,969 - INFO - 🚀 Running focused Nuclei scan
+2025-10-05 11:32:22,970 - ERROR - ❌ Nuclei scan failed: [Errno 2] No such file or directory: 'nuclei'
+2025-10-05 11:32:22,970 - INFO - 🎉 Scan complete! Found 0 vulnerabilities
+2025-10-05 11:32:22,970 - INFO - ============================================================
+2025-10-05 11:32:22,970 - INFO - 🎯 AEGIS-X FOCUSED SCAN RESULTS
+2025-10-05 11:32:22,970 - INFO - ============================================================
+2025-10-05 11:32:22,970 - INFO - Target: httpbin.org
+2025-10-05 11:32:22,970 - INFO - Total Vulnerabilities: 0
+2025-10-05 11:32:22,970 - INFO - Critical: 0
+2025-10-05 11:32:22,970 - INFO - High: 0
+2025-10-05 11:32:22,970 - INFO - Medium: 0
+2025-10-05 11:32:22,970 - INFO - Low: 0
+2025-10-05 11:32:22,970 - INFO - Verified: 0 (0%)
+2025-10-05 11:32:22,970 - INFO - Report saved: output/aegis_x_focused_report_httpbin.org_1759663942.json
+2025-10-05 11:32:22,971 - INFO - ============================================================
+2025-10-05 11:32:22,971 - INFO - 🎯 Checking Success Criteria:
+2025-10-05 11:32:22,971 - INFO - ✅ Total Vulnerabilities: 0
+2025-10-05 11:32:22,971 - INFO - ✅ Critical: 0
+2025-10-05 11:32:22,971 - INFO - ✅ High: 0
+2025-10-05 11:32:22,971 - INFO - ✅ Medium: 0
+2025-10-05 11:32:22,971 - INFO - ⚠️ No vulnerabilities found - target may be well secured

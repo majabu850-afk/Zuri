@@ -1,0 +1,43 @@
+2025-10-05 11:35:34,849 - INFO - 🔥 Initializing AEGIS-X Advanced Scanner
+2025-10-05 11:35:34,850 - INFO - ✅ Advanced scanner initialized
+2025-10-05 11:35:34,850 - INFO - 🎯 Starting advanced scan for: youngplatform.com
+2025-10-05 11:35:34,850 - INFO - 🔍 Phase 1: Advanced Reconnaissance
+2025-10-05 11:35:35,013 - INFO - 📊 Target analyzed: 200 cloudflare
+2025-10-05 11:35:35,013 - INFO - 🌐 Phase 2: Subdomain Enumeration
+2025-10-05 11:35:35,224 - INFO - 🌐 Found subdomain: https://www.youngplatform.com
+2025-10-05 11:35:35,890 - INFO - 📁 Phase 3: Advanced Directory Discovery
+2025-10-05 11:35:44,109 - INFO - 🔍 Phase 4: Parameter Mining
+2025-10-05 11:35:45,599 - INFO - 🔍 Discovered 51 parameters
+2025-10-05 11:35:45,599 - INFO - ⚡ Phase 5: Advanced Vulnerability Testing
+2025-10-05 11:35:45,599 - INFO - 🎯 Testing: https://youngplatform.com
+2025-10-05 11:37:16,640 - INFO - 🚨 SSRF found: url in https://youngplatform.com
+2025-10-05 11:37:16,867 - INFO - 🚨 SSRF found: url in https://youngplatform.com
+2025-10-05 11:37:17,104 - INFO - 🚨 SSRF found: redirect in https://youngplatform.com
+2025-10-05 11:37:17,322 - INFO - 🚨 SSRF found: callback in https://youngplatform.com
+2025-10-05 11:37:31,458 - INFO - 🎯 Testing: https://www.youngplatform.com
+2025-10-05 11:39:14,425 - INFO - 🚨 SSRF found: url in https://www.youngplatform.com
+2025-10-05 11:39:14,756 - INFO - 🚨 SSRF found: redirect in https://www.youngplatform.com
+2025-10-05 11:39:15,052 - INFO - 🚨 SSRF found: callback in https://www.youngplatform.com
+2025-10-05 11:39:31,467 - INFO - ✅ Phase 6: Vulnerability Verification
+2025-10-05 11:39:32,169 - INFO - 🎉 Advanced scan complete! Found 7 verified vulnerabilities
+2025-10-05 11:39:32,169 - INFO - ============================================================
+2025-10-05 11:39:32,170 - INFO - 🎯 AEGIS-X ADVANCED SCAN RESULTS
+2025-10-05 11:39:32,170 - INFO - ============================================================
+2025-10-05 11:39:32,170 - INFO - Target: youngplatform.com
+2025-10-05 11:39:32,170 - INFO - Discovered Subdomains: 1
+2025-10-05 11:39:32,170 - INFO - Discovered Endpoints: 135
+2025-10-05 11:39:32,170 - INFO - Discovered Parameters: 51
+2025-10-05 11:39:32,170 - INFO - Total Vulnerabilities: 7
+2025-10-05 11:39:32,170 - INFO - Critical: 0
+2025-10-05 11:39:32,170 - INFO - High: 7
+2025-10-05 11:39:32,170 - INFO - Medium: 0
+2025-10-05 11:39:32,170 - INFO - Low: 0
+2025-10-05 11:39:32,170 - INFO - Verified: 0 (0.0%)
+2025-10-05 11:39:32,170 - INFO - Report saved: output/aegis_x_advanced_report_youngplatform.com_1759664372.json
+2025-10-05 11:39:32,170 - INFO - ============================================================
+2025-10-05 11:39:32,170 - INFO - 🎯 Checking Success Criteria:
+2025-10-05 11:39:32,170 - INFO - ✅ Total Vulnerabilities: 7
+2025-10-05 11:39:32,170 - INFO - ✅ Critical: 0
+2025-10-05 11:39:32,170 - INFO - ✅ High: 7
+2025-10-05 11:39:32,170 - INFO - ✅ Medium: 0
+2025-10-05 11:39:32,170 - INFO - 🎉 SUCCESS: Vulnerabilities found!

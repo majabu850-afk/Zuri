@@ -1,0 +1,46 @@
+{
+  "scan_info": {
+    "target": "youngplatform.com",
+    "timestamp": "2025-10-05T11:28:11.246849",
+    "scanner": "AEGIS-X Reborn",
+    "version": "1.0"
+  },
+  "statistics": {
+    "total_vulnerabilities": 0,
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "verified": 0,
+    "verification_rate": 0
+  },
+  "target_info": {
+    "status_code": 200,
+    "headers": {
+      "Date": "Sun, 05 Oct 2025 11:27:16 GMT",
+      "Content-Type": "text/html; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Content-Encoding": "br",
+      "Access-Control-Allow-Origin": "*",
+      "Age": "157690",
+      "Cache-Control": "public, max-age=0, must-revalidate",
+      "Content-Disposition": "inline",
+      "Last-Modified": "Fri, 03 Oct 2025 15:39:06 GMT",
+      "strict-transport-security": "max-age=0; includeSubDomains; preload",
+      "x-vercel-cache": "HIT",
+      "x-vercel-id": "cle1::qx627-1759663636123-deb2d1e9f873",
+      "cf-cache-status": "DYNAMIC",
+      "Vary": "accept-encoding",
+      "X-Content-Type-Options": "nosniff",
+      "X-Frame-Options": "SAMEORIGIN",
+      "Server": "cloudflare",
+      "CF-RAY": "989c919d7adeeae7-ORD"
+    },
+    "server": "cloudflare",
+    "powered_by": "Unknown",
+    "content_type": "text/html; charset=utf-8",
+    "content_length": "Unknown"
+  },
+  "vulnerabilities": []
+}

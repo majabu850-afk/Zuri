@@ -1,0 +1,96 @@
+2025-10-05 11:44:15,451 - __main__ - INFO - 🔥 Initializing AEGIS-X Final - Production Scanner
+2025-10-05 11:44:15,452 - __main__ - INFO - ✅ AEGIS-X Final initialized successfully
+2025-10-05 11:44:15,452 - __main__ - INFO - 🎯 Starting comprehensive scan for: youngplatform.com
+2025-10-05 11:44:15,452 - __main__ - INFO - 🔍 Phase 1: Intelligence Gathering
+2025-10-05 11:44:15,627 - __main__ - INFO - 📊 Target analyzed: 200 cloudflare
+2025-10-05 11:44:15,627 - __main__ - INFO - 🔧 Technologies: Cloudflare, React
+2025-10-05 11:44:15,627 - __main__ - INFO - 🌐 Phase 2: Asset Discovery
+2025-10-05 11:44:16,593 - __main__ - INFO - 🌐 Found subdomain: https://www.youngplatform.com
+2025-10-05 11:44:31,857 - __main__ - INFO - 🌐 Discovered 1 subdomains
+2025-10-05 11:44:31,857 - __main__ - INFO - 📁 Phase 3: Endpoint Enumeration
+2025-10-05 11:44:33,421 - __main__ - INFO - 📁 Discovered 148 endpoints
+2025-10-05 11:44:33,421 - __main__ - INFO - 🔍 Phase 4: Parameter Discovery
+2025-10-05 11:44:36,352 - __main__ - INFO - 🔍 Discovered 1756 parameters
+2025-10-05 11:44:36,352 - __main__ - INFO - ⚡ Phase 5: Comprehensive Vulnerability Testing
+2025-10-05 11:44:36,352 - __main__ - INFO - 🎯 Testing: https://youngplatform.com
+2025-10-05 11:44:36,682 - __main__ - INFO - 🚨 SSRF found: trustedCssUrl in https://youngplatform.com
+2025-10-05 11:44:36,942 - __main__ - INFO - 🚨 SSRF found: deep-link-cookie in https://youngplatform.com
+2025-10-05 11:44:37,205 - __main__ - INFO - 🚨 SSRF found: innertubeApiKey in https://youngplatform.com
+2025-10-05 11:44:37,447 - __main__ - INFO - 🚨 SSRF found: mweb_account_linking_noapp in https://youngplatform.com
+2025-10-05 11:44:39,202 - __main__ - INFO - 🚨 SSRF found: add-continue-url-param in https://youngplatform.com
+2025-10-05 11:44:39,533 - __main__ - INFO - 🚨 SSRF found: polymer_report_missing_web_navigation_endpoint_rate in https://youngplatform.com
+2025-10-05 11:44:39,629 - __main__ - INFO - 🚨 Sensitive file found: robots.txt
+2025-10-05 11:44:39,787 - __main__ - INFO - 🚨 Sensitive file found: sitemap.xml
+2025-10-05 11:44:39,836 - __main__ - INFO - 🚨 SSRF found: defaultNavigationEndpoint in https://youngplatform.com
+2025-10-05 11:44:57,361 - __main__ - INFO - 🎯 Testing: https://www.youngplatform.com
+2025-10-05 11:44:57,867 - __main__ - INFO - 🚨 SSRF found: trustedCssUrl in https://www.youngplatform.com
+2025-10-05 11:45:01,335 - __main__ - INFO - 🚨 Sensitive file found: robots.txt
+2025-10-05 11:45:01,568 - __main__ - INFO - 🚨 Sensitive file found: sitemap.xml
+2025-10-05 11:45:02,315 - __main__ - INFO - 🚨 SSRF found: mweb_account_linking_noapp in https://www.youngplatform.com
+2025-10-05 11:45:02,741 - __main__ - INFO - 🚨 SSRF found: androidAppindexingLink in https://www.youngplatform.com
+2025-10-05 11:45:22,849 - __main__ - INFO - 🚀 Phase 6: Nuclei Template Scanning
+2025-10-05 11:45:22,850 - __main__ - ERROR - ❌ Nuclei scan failed: [Errno 2] No such file or directory: 'nuclei'
+2025-10-05 11:45:22,850 - __main__ - INFO - ✅ Phase 7: Vulnerability Verification
+2025-10-05 11:45:25,069 - __main__ - INFO - 📊 Phase 8: Risk Assessment
+2025-10-05 11:45:25,069 - __main__ - INFO - 🎉 Comprehensive scan complete!
+2025-10-05 11:45:25,069 - __main__ - INFO - ⏱️ Scan duration: 69.62 seconds
+2025-10-05 11:45:25,069 - __main__ - INFO - 📊 Requests made: 862
+2025-10-05 11:45:25,069 - __main__ - INFO - 🎯 Endpoints tested: 63
+2025-10-05 11:45:25,069 - __main__ - INFO - 🔍 Parameters tested: 720
+2025-10-05 11:45:25,069 - __main__ - INFO - 🚨 Vulnerabilities found: 14
+2025-10-05 11:45:25,070 - __main__ - INFO - ================================================================================
+2025-10-05 11:45:25,070 - __main__ - INFO - 🎯 AEGIS-X FINAL - COMPREHENSIVE SCAN RESULTS
+2025-10-05 11:45:25,070 - __main__ - INFO - ================================================================================
+2025-10-05 11:45:25,070 - __main__ - INFO - Target: youngplatform.com
+2025-10-05 11:45:25,070 - __main__ - INFO - Scan Duration: 69.62 seconds
+2025-10-05 11:45:25,070 - __main__ - INFO - Requests Made: 862
+2025-10-05 11:45:25,070 - __main__ - INFO - Endpoints Tested: 63
+2025-10-05 11:45:25,070 - __main__ - INFO - Parameters Tested: 720
+2025-10-05 11:45:25,070 - __main__ - INFO - --------------------------------------------------------------------------------
+2025-10-05 11:45:25,070 - __main__ - INFO - Discovered Assets:
+2025-10-05 11:45:25,070 - __main__ - INFO -   Subdomains: 1
+2025-10-05 11:45:25,071 - __main__ - INFO -   Endpoints: 148
+2025-10-05 11:45:25,071 - __main__ - INFO -   Parameters: 1756
+2025-10-05 11:45:25,071 - __main__ - INFO - --------------------------------------------------------------------------------
+2025-10-05 11:45:25,071 - __main__ - INFO - Vulnerability Summary:
+2025-10-05 11:45:25,071 - __main__ - INFO -   Total Vulnerabilities: 14
+2025-10-05 11:45:25,071 - __main__ - INFO -   Critical: 0
+2025-10-05 11:45:25,071 - __main__ - INFO -   High: 10
+2025-10-05 11:45:25,071 - __main__ - INFO -   Medium: 4
+2025-10-05 11:45:25,071 - __main__ - INFO -   Low: 0
+2025-10-05 11:45:25,071 - __main__ - INFO -   Verified: 4 (28.57%)
+2025-10-05 11:45:25,071 - __main__ - INFO -   Average CVSS Score: 4.07
+2025-10-05 11:45:25,071 - __main__ - INFO - --------------------------------------------------------------------------------
+2025-10-05 11:45:25,071 - __main__ - INFO - Vulnerability Types:
+2025-10-05 11:45:25,071 - __main__ - INFO -   Server-Side Request Forgery (SSRF): 10
+2025-10-05 11:45:25,071 - __main__ - INFO -   Information Disclosure: 4
+2025-10-05 11:45:25,071 - __main__ - INFO - --------------------------------------------------------------------------------
+2025-10-05 11:45:25,071 - __main__ - INFO - Overall Risk Level: High
+2025-10-05 11:45:25,071 - __main__ - INFO - Report saved: output/aegis_x_final_report_youngplatform.com_1759664725.json
+2025-10-05 11:45:25,071 - __main__ - INFO - ================================================================================
+2025-10-05 11:45:25,071 - __main__ - INFO - 🎯 Checking Success Criteria:
+2025-10-05 11:45:25,071 - __main__ - INFO - ✅ Total Vulnerabilities: 14
+2025-10-05 11:45:25,071 - __main__ - INFO - ✅ Critical: 0
+2025-10-05 11:45:25,071 - __main__ - INFO - ✅ High: 10
+2025-10-05 11:45:25,071 - __main__ - INFO - ✅ Medium: 4
+2025-10-05 11:45:25,071 - __main__ - INFO - 🎉 SUCCESS: Vulnerabilities found!
+2025-10-05 11:45:25,071 - __main__ - INFO - ⚠️ HIGH RISK: Urgent attention needed!
+2025-10-05 11:47:26,670 - __main__ - INFO - 🔥 Initializing AEGIS-X Final - Production Scanner
+2025-10-05 11:47:26,670 - __main__ - INFO - ✅ AEGIS-X Final initialized successfully
+2025-10-05 11:47:26,670 - __main__ - INFO - 🎯 Starting comprehensive scan for: httpbin.org
+2025-10-05 11:47:26,671 - __main__ - INFO - 🔍 Phase 1: Intelligence Gathering
+2025-10-05 11:47:26,838 - __main__ - INFO - 📊 Target analyzed: 200 gunicorn/19.9.0
+2025-10-05 11:47:26,838 - __main__ - INFO - 🔧 Technologies: React, jQuery
+2025-10-05 11:47:26,838 - __main__ - INFO - 🌐 Phase 2: Asset Discovery
+2025-10-05 11:47:27,778 - __main__ - INFO - 🌐 Found subdomain: https://www.httpbin.org
+2025-10-05 11:47:27,779 - __main__ - INFO - 🌐 Discovered 1 subdomains
+2025-10-05 11:47:27,779 - __main__ - INFO - 📁 Phase 3: Endpoint Enumeration
+2025-10-05 11:47:34,742 - __main__ - INFO - 📁 Discovered 9 endpoints
+2025-10-05 11:47:34,742 - __main__ - INFO - 🔍 Phase 4: Parameter Discovery
+2025-10-05 11:47:38,218 - __main__ - INFO - 🔍 Discovered 263 parameters
+2025-10-05 11:47:38,218 - __main__ - INFO - ⚡ Phase 5: Comprehensive Vulnerability Testing
+2025-10-05 11:47:38,218 - __main__ - INFO - 🎯 Testing: https://httpbin.org
+2025-10-05 11:47:59,779 - __main__ - INFO - 🚨 SSRF found: copilotApiOverrideUrl in https://httpbin.org
+2025-10-05 11:48:00,273 - __main__ - INFO - 🚨 SSRF found: selected-links in https://httpbin.org
+2025-10-05 11:48:06,495 - __main__ - INFO - 🚨 SSRF found: endpoint in https://httpbin.org
+2025-10-05 11:48:06,750 - __main__ - INFO - 🚨 SSRF found: ghCliUrl in https://httpbin.org

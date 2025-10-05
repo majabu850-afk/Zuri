@@ -1,0 +1,34 @@
+# AEGIS-X Ultimate Target Configuration - Allegro Bug Bounty Program
+# Supports multiple target types: WEB, MOBILE, FILE, NETWORK, CODE
+# Configured for Intigriti Allegro Bug Bounty Program
+
+# Allegro Sandbox Environments (Tier 2 - In Scope)
+# Czech Republic Sandbox
+*.allegro.cz.allegrosandbox.pl
+
+# Poland Sandbox (Main Environment)
+*.allegro.pl.allegrosandbox.pl
+
+# Slovakia Sandbox
+*.allegro.sk.allegrosandbox.pl
+
+# Specific High-Value Targets
+api.allegro.pl.allegrosandbox.pl
+app.allegro.pl.allegrosandbox.pl
+admin.allegro.pl.allegrosandbox.pl
+mobile.allegro.pl.allegrosandbox.pl
+developer.allegro.pl.allegrosandbox.pl
+
+# Czech Republic Specific
+api.allegro.cz.allegrosandbox.pl
+app.allegro.cz.allegrosandbox.pl
+
+# Slovakia Specific
+api.allegro.sk.allegrosandbox.pl
+app.allegro.sk.allegrosandbox.pl
+
+# OUT OF SCOPE - DO NOT TEST (Production Environments)
+# *.allegro.pl
+# *.allegro.sk
+# *.allegro.cz
+# *.allegrogroup.com
