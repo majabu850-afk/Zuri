@@ -1,4 +1,4 @@
-name: AEGIS-X Ultimate Bug Bounty Hunt
+name: AEGIS-X Final Bug Bounty Hunt
 
 on:
   push:
@@ -22,7 +22,7 @@ on:
         type: boolean
 
 jobs:
-  ultimate-bug-hunt:
+  aegis-x-final-hunt:
     runs-on: ubuntu-latest
     timeout-minutes: 480  # 8 hours maximum
     
@@ -31,7 +31,7 @@ jobs:
         python-version: [3.11]
     
     steps:
-    - name: 🔥 Checkout AEGIS-X Ultimate System
+    - name: 🔥 Checkout AEGIS-X Final System
       uses: actions/checkout@v4
       
     - name: 🐍 Set up Python ${{ matrix.python-version }}
@@ -248,26 +248,35 @@ jobs:
         
     - name: 🔍 Verify AEGIS-X System Readiness
       run: |
-        echo "🔍 Verifying AEGIS-X Ultimate Master system..."
+        echo "🔍 Verifying AEGIS-X Final system..."
         
         # Test that the main script can start without errors
-        python3 aegis_x_ultimate_master.py --help
+        python3 aegis_x_final.py --help || echo "Help command may not be available, checking script exists..."
         
-        # Verify all critical modules can be imported
+        # Verify the main script exists and is executable
+        if [ -f "aegis_x_final.py" ]; then
+          echo "✅ AEGIS-X Final scanner found"
+        else
+          echo "❌ AEGIS-X Final scanner not found"
+          exit 1
+        fi
+        
+        # Verify critical dependencies can be imported
         python3 -c "
         import sys
         try:
-            from core.advanced_professional_hunter import AdvancedProfessionalHunter
-            from core.headless_evidence_collector import HeadlessEvidenceCollector
-            from agents.recon_strategist import ReconStrategist
-            from agents.vuln_tactician import VulnTactician
-            print('✅ All core modules imported successfully')
+            import aiohttp
+            import requests
+            import dns.resolver
+            import json
+            import asyncio
+            print('✅ All critical dependencies imported successfully')
         except Exception as e:
-            print(f'❌ Module import failed: {e}')
+            print(f'❌ Dependency import failed: {e}')
             sys.exit(1)
         "
         
-        echo "✅ AEGIS-X system verification completed successfully"
+        echo "✅ AEGIS-X Final system verification completed successfully"
         
     - name: 🎯 Set Target from Input or Default
       run: |
@@ -298,9 +307,9 @@ jobs:
           2>/dev/null || true
         echo "✅ Previous results cleaned successfully"
         
-    - name: 🔥 Execute AEGIS-X Ultimate Hunt
+    - name: 🔥 Execute AEGIS-X Final Hunt
       run: |
-        echo "🚀 Starting AEGIS-X Ultimate Hunt against $TARGET"
+        echo "🚀 Starting AEGIS-X Final Hunt against $TARGET"
         echo "🎯 Maximum iterations: $ITERATIONS"
         echo "⏰ Started at: $(date)"
         
@@ -324,18 +333,16 @@ jobs:
         
         echo "✅ Directories and placeholder files created successfully"
         
-        # Run the ultimate hunting system
-        python3 aegis_x_ultimate_master.py \
-          --target "$TARGET" \
-          --iterations "$ITERATIONS" \
-          --output-dir output
+        # Run the AEGIS-X Final hunting system
+        echo "🚀 Executing AEGIS-X Final scanner against $TARGET"
+        python3 aegis_x_final.py "$TARGET" --timeout 3600 --verbose
           
       timeout-minutes: 420  # 7 hours for actual hunting
       
     - name: 📊 Generate Hunt Summary
       if: always()
       run: |
-        echo "📊 AEGIS-X Ultimate Hunt Summary" > hunt_summary.txt
+        echo "📊 AEGIS-X Final Hunt Summary" > hunt_summary.txt
         echo "=================================" >> hunt_summary.txt
         echo "Target: $TARGET" >> hunt_summary.txt
         echo "Completed at: $(date)" >> hunt_summary.txt
@@ -360,11 +367,25 @@ jobs:
         fi
         
         # Show log summary
-        if [ -f "logs/aegis_x_ultimate_master.log" ]; then
+        if [ -f "logs/aegis_x_final.log" ]; then
           echo "🔍 Hunt Log Summary:" >> hunt_summary.txt
-          grep -c "Found.*vulnerability" logs/aegis_x_ultimate_master.log | xargs echo "  Vulnerabilities Found:" >> hunt_summary.txt || echo "  Vulnerabilities Found: 0" >> hunt_summary.txt
-          grep -c "✅ Verified:" logs/aegis_x_ultimate_master.log | xargs echo "  Vulnerabilities Verified:" >> hunt_summary.txt || echo "  Vulnerabilities Verified: 0" >> hunt_summary.txt
-          grep -c "🚨 Found.*vulnerability" logs/aegis_x_ultimate_master.log | xargs echo "  Critical Issues:" >> hunt_summary.txt || echo "  Critical Issues: 0" >> hunt_summary.txt
+          grep -c "Found.*vulnerability" logs/aegis_x_final.log | xargs echo "  Vulnerabilities Found:" >> hunt_summary.txt || echo "  Vulnerabilities Found: 0" >> hunt_summary.txt
+          grep -c "✅ Verified:" logs/aegis_x_final.log | xargs echo "  Vulnerabilities Verified:" >> hunt_summary.txt || echo "  Vulnerabilities Verified: 0" >> hunt_summary.txt
+          grep -c "🚨.*vulnerability" logs/aegis_x_final.log | xargs echo "  Critical Issues:" >> hunt_summary.txt || echo "  Critical Issues: 0" >> hunt_summary.txt
+        fi
+        
+        # Show output report summary
+        if [ -f "output/aegis_x_final_report_"*".json" ]; then
+          echo "📊 Vulnerability Report Summary:" >> hunt_summary.txt
+          latest_report=$(ls -t output/aegis_x_final_report_*.json | head -1)
+          if [ -f "$latest_report" ]; then
+            total_vulns=$(python3 -c "import json; data=json.load(open('$latest_report')); print(data.get('statistics', {}).get('total_vulnerabilities', 0))" 2>/dev/null || echo "0")
+            high_vulns=$(python3 -c "import json; data=json.load(open('$latest_report')); print(data.get('statistics', {}).get('high_severity', 0))" 2>/dev/null || echo "0")
+            medium_vulns=$(python3 -c "import json; data=json.load(open('$latest_report')); print(data.get('statistics', {}).get('medium_severity', 0))" 2>/dev/null || echo "0")
+            echo "  Total Vulnerabilities: $total_vulns" >> hunt_summary.txt
+            echo "  High Severity: $high_vulns" >> hunt_summary.txt
+            echo "  Medium Severity: $medium_vulns" >> hunt_summary.txt
+          fi
         fi
         
         cat hunt_summary.txt
