@@ -1,0 +1,23 @@
+{
+  "scan_info": {
+    "target": "httpbin.org",
+    "timestamp": "2025-10-05T11:32:22.970332",
+    "scanner": "AEGIS-X Focused",
+    "version": "1.0"
+  },
+  "statistics": {
+    "total_vulnerabilities": 0,
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "verified": 0,
+    "verification_rate": 0
+  },
+  "target_info": {
+    "status_code": 200,
+    "server": "gunicorn/19.9.0",
+    "powered_by": "Unknown"
+  },
+  "vulnerabilities": []
+}
